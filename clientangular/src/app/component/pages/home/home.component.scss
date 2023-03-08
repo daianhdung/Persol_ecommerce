@@ -1,0 +1,59 @@
+.dropdown-menu {
+  display: none;
+
+  &.show {
+    display: block;
+  }
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.swiper_custom .swiper-button-prev {
+  color: red;
+}
+.swiper-button-prev {
+  color: red;
+}
+
+.separate {
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.top_branch_slide {
+  width: 1360px;
+  height: 450px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.wrap_swiper {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #5b5b5b;
+  &:hover {
+      color: #2ac37d;
+  }
+}
+
+.card {
+  &:hover .card-title{
+    color: #2ac37d;
+  }
+  &:hover .card-price{
+    color: #28a1b6;
+  }
+}

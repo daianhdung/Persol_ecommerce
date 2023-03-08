@@ -1,0 +1,240 @@
+<ng-container *ngIf="profileTemplate; else passwordTemplate">
+  <form [formGroup]="formDataProfile" style="user-select: 'none'">
+    <div class="row">
+      <div class="form-group col-md-5">
+        <label htmlFor="name">Họ và tên</label>
+        <input
+          style="height: '40px'"
+          type="text"
+          class="form-control form-control-lg"
+          id="name"
+          formControlName="fullname"
+        />
+        <ng-container
+          *ngIf="
+            (formDataProfile.get('fullname')?.invalid && isSubmitted) ||
+            formDataProfile.get('fullname')?.dirty ||
+            formDataProfile.get('fullname')?.touched
+          "
+        >
+          <span
+            class="text-danger"
+            *ngIf="formDataProfile.get('fullname')?.errors?.['required']"
+          >
+            Họ và tên không được trống.
+          </span>
+        </ng-container>
+      </div>
+
+      <div class="form-group col-md-5">
+        <label htmlFor="name">Email</label>
+        <input
+          style="height: '40px'"
+          type="text"
+          class="form-control form-control-lg"
+          id="email"
+          formControlName="email"
+        />
+        <ng-container
+          *ngIf="
+            (formDataProfile.get('email')?.invalid && isSubmitted) ||
+            formDataProfile.get('email')?.dirty ||
+            formDataProfile.get('email')?.touched
+          "
+        >
+          <span
+            class="text-danger"
+            *ngIf="formDataProfile.get('email')?.errors?.['required']"
+          >
+            Email không được trống.
+          </span>
+          <span
+            class="text-danger"
+            *ngIf="formDataProfile.get('email')?.errors?.['pattern']"
+          >
+            Email không hợp lệ.
+          </span>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="form-group col-md-5">
+        <label htmlFor="name">Số điện thoại</label>
+        <input
+          style="height: '40px'"
+          type="text"
+          class="form-control form-control-lg"
+          id="phone"
+          formControlName="phone"
+        />
+        <ng-container
+          *ngIf="
+            (formDataProfile.get('phone')?.invalid && isSubmitted) ||
+            formDataProfile.get('phone')?.dirty ||
+            formDataProfile.get('phone')?.touched
+          "
+        >
+          <span
+            class="text-danger"
+            *ngIf="formDataProfile.get('phone')?.errors?.['required']"
+          >
+            Số điện thoại không được trống.
+          </span>
+        </ng-container>
+      </div>
+      <div class="form-group col-md-5">
+        <label htmlFor="price">Địa chỉ</label>
+        <input
+          style="height: '40px'"
+          type="text"
+          class="form-control form-control-lg"
+          id="address"
+          formControlName="address"
+        />
+        <ng-container
+          *ngIf="
+            (formDataProfile.get('address')?.invalid && isSubmitted) ||
+            formDataProfile.get('address')?.dirty ||
+            formDataProfile.get('address')?.touched
+          "
+        >
+          <span
+            class="text-danger"
+            *ngIf="formDataProfile.get('address')?.errors?.['required']"
+          >
+            Địa chỉ không được trống.
+          </span>
+        </ng-container>
+      </div>
+    </div>
+    <button
+      (click)="onSubmitProfile()"
+      type="button"
+      class="btn btn-outline-info btn-lg mt-3"
+    >
+      Lưu thay đổi
+    </button>
+  </form>
+</ng-container>
+
+<!-- Test -->
+
+<ng-template #passwordTemplate>
+  <form [formGroup]="formDataPassword" style="user-select: 'none'">
+    <div class="row">
+      <div class="mb-3 col-md-5">
+        <label htmlFor="password" class="form-label">Mật khẩu cũ</label>
+        <input
+          style="height: '35px'; user-select: 'none'"
+          type="password"
+          class="form-control form-control-lg"
+          id="password"
+          placeholder="*******"
+          formControlName="oldPassword"
+        />
+        <ng-container
+          *ngIf="
+            (formDataPassword.get('oldPassword')?.invalid && isSubmitted) ||
+            formDataPassword.get('oldPassword')?.dirty ||
+            formDataPassword.get('oldPassword')?.touched
+          "
+        >
+          <span
+            class="text-danger"
+            *ngIf="formDataPassword.get('oldPassword')?.errors?.['required']"
+          >
+            Password không được trống.
+          </span>
+          <span
+            class="text-danger"
+            *ngIf="formDataPassword.get('oldPassword')?.errors?.['minlength']"
+          >
+            Password phải dài hơn 6 kí tự
+          </span>
+        </ng-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mb-3 col-md-5 h-50">
+        <label htmlFor="newPassword" class="form-label">Mật khẩu mới</label>
+        <input
+          style="height: '35px'"
+          type="password"
+          class="form-control form-control-lg"
+          id="newPassword"
+          formControlName="password"
+        />
+      </div>
+      <ng-container
+        *ngIf="
+          (formDataPassword.get('password')?.invalid && isSubmitted) ||
+          formDataPassword.get('password')?.dirty ||
+          formDataPassword.get('password')?.touched
+        "
+      >
+        <span
+          class="text-danger"
+          *ngIf="formDataPassword.get('password')?.errors?.['required']"
+        >
+          Password không được trống.
+        </span>
+        <span
+          class="text-danger"
+          *ngIf="formDataPassword.get('password')?.errors?.['minlength']"
+        >
+          Password phải dài hơn 6 kí tự
+        </span>
+      </ng-container>
+    </div>
+    <div class="row">
+      <div class="mb-3 col-md-5 h-50">
+        <label htmlFor="reNewPassword" class="form-label"
+          >Nhập lại mật khẩu mới</label
+        >
+        <input
+          style="height: '35px'"
+          type="password"
+          class="form-control form-control-lg"
+          id="reNewPassword"
+          formControlName="rePassword"
+        />
+      </div>
+      <ng-container
+        *ngIf="
+          (formDataPassword.get('rePassword')?.invalid && isSubmitted) ||
+          formDataPassword.get('rePassword')?.dirty ||
+          formDataPassword.get('rePassword')?.touched
+        "
+      >
+        <span
+          class="text-danger"
+          *ngIf="formDataPassword.get('rePassword')?.errors?.['required']"
+        >
+          Password không được trống.
+        </span>
+        <span
+          class="text-danger"
+          *ngIf="
+            formDataPassword.controls['rePassword'].value !=
+            formDataPassword.controls['password'].value
+          "
+        >
+          Nhập lại mật khẩu không trùng khớp
+        </span>
+      </ng-container>
+    </div>
+    <div class="row">
+      <div class="mb-3 col-md-5 h-50">
+        <!-- <h3 class="text-danger">{!equal && "Mật khẩu mới chưa trùng khớp"}</h3> -->
+      </div>
+    </div>
+    <button
+      (click)="onSubmitPassword()"
+      type="button"
+      class="btn btn-outline-info btn-lg mt-3"
+    >
+      Lưu thay đổi
+    </button>
+  </form>
+</ng-template>

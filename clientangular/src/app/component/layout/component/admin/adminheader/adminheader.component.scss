@@ -1,0 +1,11 @@
+.dropdown-menu {
+  display: none;
+  right: 0; /* Change this to left: 0; */
+  &.show {
+    display: block;
+  }
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}

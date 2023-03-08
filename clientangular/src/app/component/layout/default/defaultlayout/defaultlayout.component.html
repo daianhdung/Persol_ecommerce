@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+<div *ngIf="!isRouteActive('/home') && !isRouteActive('/product')" style="max-width: 1400px;" class="container-fluid">
+    <router-outlet></router-outlet>
+</div>
+
+<div *ngIf="isRouteActive('/home') || isRouteActive('/') || isRouteActive('/product')">
+    <router-outlet></router-outlet>
+</div>
+
+<app-footer></app-footer>

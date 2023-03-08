@@ -1,0 +1,144 @@
+<form [formGroup]="formData">
+  <a class="d-flex justify-content-center" routerLink="/home">
+    <img width="50" height="50" src="/assets/img/persol.jpg" alt="" />
+  </a>
+  <div class="row justify-content-center my-3 text-white">Signup</div>
+
+  <!-- Username input -->
+  <div class="form-outline mb-4">
+    <ng-container
+      *ngIf="
+        (formData.get('fullname')?.invalid && isSubmitted) ||
+        formData.get('fullname')?.dirty ||
+        formData.get('fullname')?.touched
+      "
+    >
+      <span
+        class="text-danger"
+        *ngIf="formData.get('fullname')?.errors?.['required']"
+      >
+        Full Name is required.
+      </span>
+    </ng-container>
+    <input type="text" formControlName="fullname" class="form-control" />
+    <label class="form-label" for="registerUsername">Full Name</label>
+  </div>
+
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <ng-container
+      *ngIf="
+        (formData.get('email')?.invalid && isSubmitted) ||
+        formData.get('email')?.dirty ||
+        formData.get('email')?.touched
+      "
+    >
+      <span
+        class="text-danger"
+        *ngIf="formData.get('email')?.errors?.['required']"
+      >
+        Email is required.
+      </span>
+      <span
+        class="text-danger"
+        *ngIf="formData.get('email')?.errors?.['pattern']"
+      >
+        Email invalid.
+      </span>
+    </ng-container>
+    <input type="email" formControlName="email" class="form-control" />
+    <label class="form-label" for="registerEmail">Email</label>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <ng-container
+      *ngIf="
+        (formData.get('password')?.invalid && isSubmitted) ||
+        formData.get('password')?.dirty ||
+        formData.get('password')?.touched
+      "
+    >
+      <span
+        class="text-danger"
+        *ngIf="formData.get('password')?.errors?.['required']"
+      >
+        Passwor is required.
+      </span>
+      <span
+        class="text-danger"
+        *ngIf="formData.get('password')?.errors?.['minlength']"
+      >
+        Password must be at least 6 characters .
+      </span>
+    </ng-container>
+    <input type="password" formControlName="password" class="form-control" />
+    <label class="form-label" for="registerPassword">Password</label>
+  </div>
+
+  <!-- Repeat Password input -->
+  <div class="form-outline mb-4">
+    <ng-container
+        *ngIf="
+          (formData.get('rePassword')?.invalid && isSubmitted) ||
+          formData.get('rePassword')?.dirty ||
+          formData.get('rePassword')?.touched
+        "
+      >
+        <span
+          class="text-danger"
+          *ngIf="formData.get('rePassword')?.errors?.['required']"
+        >
+          Password không được trống.
+        </span>
+        <span
+          class="text-danger"
+          *ngIf="
+            formData.controls['rePassword'].value !=
+            formData.controls['password'].value
+          "
+        >
+          Nhập lại mật khẩu không trùng khớp
+        </span>
+      </ng-container>
+    <input type="password" formControlName="rePassword" class="form-control" />
+    <label class="form-label" for="registerRepeatPassword"
+      >Repeat password</label
+    >
+  </div>
+  <div
+    class="text-danger"
+    *ngIf="formData.hasError('required', 'check') && isSubmitted"
+  >
+    Please accept the terms and conditions
+  </div>
+  <!-- Checkbox -->
+  <div class="form-check d-flex justify-content-center mb-4">
+    <input
+      class="form-check-input me-2"
+      type="checkbox"
+      value=""
+      formControlName="check"
+      aria-describedby="registerCheckHelpText"
+    />
+    <label class="form-check-label" for="registerCheck">
+      I have read and agree to the terms
+    </label>
+  </div>
+
+  <!-- Submit button -->
+  <button (click)="submitForm()" type="submit" class="btn btn-primary px-4">
+    Sign in
+  </button>
+  <div class="text-center">
+    <p>
+      Have account?
+      <a
+        style="text-decoration: underline"
+        class="text-danger"
+        routerLink="/login"
+        >Login</a
+      >
+    </p>
+  </div>
+</form>

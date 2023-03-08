@@ -1,0 +1,27 @@
+<table class="table table-hover table-content">
+  <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Tên sản phẩm</th>
+      <th scope="col">Ảnh</th>
+      <th scope="col" style="max-width: '90px'">Category</th>
+      <th scope="col" style="max-width: '90px'">Brand</th>
+      <th scope="col">Giá</th>
+      <th scope="col">Thao tác</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of productList">
+      <th class="" scope="row">{{item.id}}</th>
+      <td style="max-width: '120px'">{{item.name}}</td>
+      <td><img width="150px" height="100px" [src]="productImagePI + item.main_image" alt=""></td>
+      <td style="max-width: '90px'">{{item.category.name}}</td>
+      <td>{{item.brand.name}}</td>
+      <td>{{ item.price | number : "1.0-3" }}₫</td>
+      <td class="table-action">
+        <a [routerLink]="'/admin-product-update/' + item.id"> <i class="bi bi-pencil-square text-info fs-3"></i> </a>
+        <a routerLink="/admin-product-list" (click)="deleteProduct(item.id, item.name)"> <i class="bi bi-trash text-danger fs-3 ms-3"></i> </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

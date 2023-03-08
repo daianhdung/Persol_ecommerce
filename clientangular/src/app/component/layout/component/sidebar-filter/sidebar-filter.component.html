@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="first_wrapper">
+    <div class="filter_div">Name</div>
+    <div class="d-flex align-content-start flex-wrap">
+      <div>
+        <input [(ngModel)]="searchInput" (ngModelChange)="searchByKeyword($event)"  class="form-control me-2 search_input" type="search" placeholder="Search" aria-label="Search">
+      </div>
+    </div>
+  </div>
+    <div class="first_wrapper">
+      <div class="filter_div">Brand</div>
+      <div class="d-flex align-content-start flex-wrap">
+        <div *ngFor="let item of listBrand">
+          <input type="checkbox" class="btn-check" 
+          [id]="item.id + 'brand'" 
+          [checked]="listCheckBrandIds.includes(item.id)" 
+          (change)="handleCheckBrandId(item.id)"/>
+          <label class="btn btn-outline-dark btn-sm my-1 mx-1" [htmlFor]="item.id + 'brand'">{{item.name}}</label>
+        </div>
+      </div>
+    </div>
+    <div class="first_wrapper">
+      <div class="filter_div">Category</div>
+      <div class="d-flex align-content-start flex-wrap">
+        <div *ngFor="let item of listCate">
+          <input type="checkbox" [id]="item.id + 'category'" 
+          [checked]="listCheckCategoryIds.includes(item.id)" 
+          (change)="handleCheckCategoryId(item.id)" class="btn-check" />
+          <label class="btn btn-outline-dark btn-sm my-1 mx-1" [htmlFor]="item.id + 'category'">{{item.name}}</label>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Mail extends Model
+{
+    use HasFactory;
+
+    protected $table = 'mail';
+
+    protected $primaryKey = 'id';
+
+    public $timestamps = false;
+
+    protected $fillable = [
+        'fullname',
+        'email',
+        'phone',
+        'message',
+        'createdate'
+    ];
+}

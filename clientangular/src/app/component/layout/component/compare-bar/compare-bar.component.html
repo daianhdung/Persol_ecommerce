@@ -1,0 +1,37 @@
+<div [class.slide-down]="!toggleCompare" class="container stick_compare" style="height: 140px;">
+    <button (click)="toggleCompareButton()" class="btn btn-outline-info rounded toggle_compare"><i class="bi bi-chevron-double-down"></i></button>
+    <ul class="compare_list p-3">
+      <li *ngFor="let item of compareList">
+        <a style="text-align: center" *ngIf="item.id !== ''; else empty">
+          <img
+            width="100"
+            height="70"
+            [src]="imgProductAPI + item.image"
+            alt="Product"
+          />
+          <h5>{{ item.name }}</h5>
+        </a>
+        <ng-template #empty>
+          <h4><i class="bi bi-plus-circle-dotted me-2"></i>Empty</h4>
+        </ng-template>
+        <span
+          *ngIf="item.id !== ''"
+          style="cursor: pointer"
+          class="fs-3 text-danger"
+          (click)="removeItemCompare(item.id)"
+          >&times;</span
+        >
+      </li>
+      <li>
+        <div class="button_action">
+          <a routerLink="/compare"><button class="grow_spin">Compare now</button></a>
+        </div>
+        <button
+          class="btn btn-outline-danger mt-2"
+          (click)="removeAllItemCompare()"
+        >
+          Delete all
+        </button>
+      </li>
+    </ul>
+  </div>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="33d42fc6-eb3b-4e96-a0fa-feec3070d868" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Project_Report.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Project_Report.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_laravel/app/Http/Controllers/api/BrandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend_laravel/app/Http/Controllers/api/BrandController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_laravel/app/Http/Controllers/api/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend_laravel/app/Http/Controllers/api/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_laravel/app/Http/Controllers/api/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend_laravel/app/Http/Controllers/api/ProductsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_laravel/app/Http/Controllers/api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend_laravel/app/Http/Controllers/api/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_laravel/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend_laravel/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_laravel/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend_laravel/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_laravel/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend_laravel/bootstrap/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_laravel/resources/views/email/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend_laravel/resources/views/email/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_laravel/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend_laravel/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_laravel/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend_laravel/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/layout/admin/admin-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/layout/admin/admin-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/layout/admin/admin.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/layout/admin/admin.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/layout/admin/adminlayout/_nav.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/layout/admin/adminlayout/_nav.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/layout/admin/icons/icon-subset.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/layout/admin/icons/icon-subset.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/layout/component/admin/adminheader/adminheader.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/layout/component/admin/adminheader/adminheader.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/layout/component/compare-bar/compare-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/layout/component/compare-bar/compare-bar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/layout/default/default-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/layout/default/default-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-product/create-product/create-product.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-product/create-product/create-product.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-product/create-product/create-product.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-product/create-product/create-product.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-product/list-product/list-product.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-product/list-product/list-product.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-product/list-product/list-product.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-product/list-product/list-product.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-user/user-create/user-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-user/user-create/user-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-user/user-create/user-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-user/user-create/user-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-user/user-list/user-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-user/user-list/user-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-user/user-list/user-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-user/user-list/user-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-user/user-update/user-update.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-user/user-update/user-update.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-user/user-update/user-update.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/admin/admin-user/user-update/user-update.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/detail/detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/detail/detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/detail/detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/detail/detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/home/home.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/home/home.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/product/product.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/product/product.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/component/pages/product/product.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/component/pages/product/product.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/services/brandService/brand.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/services/brandService/brand.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/services/productService/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/services/productService/product.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/app/services/userService/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/app/services/userService/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientangular/src/environments/environment.development.ts" beforeDir="false" afterPath="$PROJECT_DIR$/clientangular/src/environments/environment.development.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persol.sql" beforeDir="false" afterPath="$PROJECT_DIR$/persol.sql" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2MU5t2k6J3lrIiEHxyOwUqnaaMM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Laravel/Persol-e-commerce/backend_laravel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="33d42fc6-eb3b-4e96-a0fa-feec3070d868" name="Changes" comment="" />
+      <created>1677809531600</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677809531600</updated>
+      <workItem from="1677809533109" duration="12000" />
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

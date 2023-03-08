@@ -1,0 +1,100 @@
+<a class="d-flex justify-content-center" routerLink="/home">
+  <img width="50" height="50" src="/assets/img/persol.jpg" alt="" />
+</a>
+<div class="row justify-content-center my-5 text-white">Login</div>
+<div class="row justify-content-center">
+  <form [formGroup]="formData">
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <ng-container
+          *ngIf="
+            (formData.get('email')?.invalid && isSubmitted) ||
+            formData.get('email')?.dirty ||
+            formData.get('email')?.touched
+          "
+        >
+          <span
+            class="text-danger"
+            *ngIf="formData.get('email')?.errors?.['required']"
+          >
+            Email is required.
+          </span>
+          <span
+            class="text-danger"
+            *ngIf="formData.get('email')?.errors?.['pattern']"
+          >
+            Email invalid.
+          </span>
+        </ng-container>
+      <input type="email" formControlName="email" class="form-control" />
+      <label class="form-label" for="form2Example1">Email address</label>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <ng-container
+          *ngIf="
+            (formData.get('password')?.invalid && isSubmitted) ||
+            formData.get('password')?.dirty ||
+            formData.get('password')?.touched
+          "
+        >
+          <span
+            class="text-danger"
+            *ngIf="formData.get('password')?.errors?.['required']"
+          >
+            Passwor is required.
+          </span>
+          <span
+            class="text-danger"
+            *ngIf="formData.get('password')?.errors?.['minlength']"
+          >
+          Passwor must longer than 6 character .
+          </span>
+        </ng-container>
+      <input type="password" formControlName="password" class="form-control" />
+      <label class="form-label" for="form2Example2">Password</label>
+    </div>
+
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center">
+        <!-- Checkbox -->
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="form2Example31"
+            checked
+          />
+          <label class="form-check-label" for="form2Example31">
+            Remember me
+          </label>
+        </div>
+      </div>
+
+      <div class="col">
+        <!-- Simple link -->
+        <a href="#!">Forgot password?</a>
+      </div>
+    </div>
+
+    <!-- Submit button -->
+    <button
+      (click)="submitForm()"
+      type="button"
+      class="btn btn-primary btn-block mb-4"
+    >
+      Sign in
+    </button>
+
+    <!-- Register buttons -->
+    <div class="text-center">
+      <p>
+        Not a member?
+        <a style="text-decoration: underline" routerLink="/signup">Register</a>
+      </p>
+    </div>
+  </form>
+</div>

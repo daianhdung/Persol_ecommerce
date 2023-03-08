@@ -1,0 +1,112 @@
+<div class="container-fluid" style="position: relative">
+  <!-- Sidebar -->
+  <app-sidebar-filter></app-sidebar-filter>
+
+  <!-- Content -->
+  <div class="content">
+    <div id="wrapper">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Sort -->
+          <div id="wrapper-sort">
+            <div
+              class="w-100 h-50 p-3 rounded border border-info"
+              style="
+                user-select: 'none';
+                background-color: rgba(235, 237, 239, 1);
+              "
+            >
+              <select
+                (change)="changeSort($event)"
+                class="w-25 form-select wm-20"
+              >
+                <option *ngFor="let item of sortList" [value]="item.name">
+                  {{ item.lable }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Product -->
+          <div class="product_list p-3 mt-3" style="width: 100%">
+            <div class="wrapper_product">
+              <!-- <div class="inner_product"> -->
+              <div class="row w-100 mt-3">
+                <ng-container *ngIf="listProduct.length > 0 ;else noItem">
+                  <div class="col-md-3 mb-5" *ngFor="let item of listProduct">
+                    <div class="card">
+                      <a [routerLink]="'/detail/' + item.id">
+                        <div class="card-img">
+                          <img [src]="imgProductAPI + item.main_image" />
+                        </div>
+                        <div class="card-title">
+                          <h5>{{ item.name }}</h5>
+                        </div>
+                        <div class="card-price p-1 fs-5 fw-bold">
+                          <span>{{ item.price | number : "1.0-3" }}₫</span>
+                        </div>
+                      </a>
+                      <span (click)="addItemCompare(item)" class="compare_icon mt-2"
+                          ><i class="bi bi-plus-circle"></i> Compare</span
+                        >
+                    </div>
+                  </div>
+                </ng-container>
+                <ng-template #noItem>
+                  <div class="mb-4 col-md-3">
+                    <h3>No product is found!</h3>
+                  </div>
+                </ng-template>
+
+                <!-- Pagination -->
+                <div class="row d-flex justify-content-center bg-white">
+                  <div class="col-md-2">
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination">
+                        <li
+                          class="page-item"
+                          *ngFor="
+                            let item of pagination;
+                            let i = index;
+                            let first = first;
+                            let last = last
+                          "
+                          [class.disabled]="!item.url"
+                          [id]="
+                            first
+                              ? (i + 1).toString()
+                              : last
+                              ? (i - 1).toString()
+                              : i.toString()
+                          "
+                          (click)="changePagination($event)"
+                        >
+                          <a
+                            [class.bg-info]="item.active"
+                            [class.text-white]="item.active"
+                            class="page-link"
+                            style="cursor: pointer"
+                          >
+                            <span
+                              [innerHTML]="
+                                first ? '&laquo' : last ? '&raquo' : item.label
+                              "
+                            ></span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <app-compare-bar [toggleCompare]="toggleCompare" (isToggleChange)="onToggleChange($event)"></app-compare-bar>
+</div>

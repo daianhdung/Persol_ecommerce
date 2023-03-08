@@ -1,0 +1,16 @@
+.col_detail:not(:last-child) {
+  border-right: 2px solid #bec2c8;
+}
+
+.header-detail {
+  padding: 10px 0;
+  font-size: 1.4rem;
+
+  .link-header {
+    color: var(--disabled-color);
+    margin-right: 10px;
+  }
+  span:last-child {
+    margin-left: 5px;
+  }
+}

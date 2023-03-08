@@ -1,0 +1,12 @@
+<section id='wrapper' class='error-page'>
+    <div class='error-box' style=" background: url(/assets/img/error-bg.jpg) center center no-repeat #fff!important">
+        <div class="error-body text-center">
+            <h1 class='not-found'>404</h1>
+            <h3 class='mt-5 h3'>Trang bạn tìm kiếm không tồn tại !</h3>
+            <p class="text-muted">YOU SEEM TO BE TRYING TO FIND HIS WAY HOME</p>
+                <a *ngIf="isAdminAuthenticated()" routerLink="/admin-dashboard" id='hover_button' class="fs-3 btn btn-info btn-rounded waves-effect waves-light m-b-40">Về trang admin</a>
+                <br>
+                <a  *ngIf="!isAdminAuthenticated()" routerLink="/home" id='hover_button' class="fs-3 btn btn-info btn-rounded waves-effect waves-light m-b-40">Về trang chủ</a>
+        </div>
+    </div>
+</section>

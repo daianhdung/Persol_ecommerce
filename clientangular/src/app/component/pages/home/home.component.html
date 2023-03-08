@@ -1,0 +1,155 @@
+<div style="max-width: 1400px" class="container-fluid body">
+  <app-carousel></app-carousel>
+  <swiper
+    [slidesPerView]="10"
+    [spaceBetween]="10"
+    [navigation]="true"
+    [scrollbar]="{ draggable: true }"
+    [loop]="true"
+    [autoplay]="{ delay: 2000 }"
+    [loopFillGroupWithBlank]="true"
+    class="swiper_custom"
+  >
+    <ng-template swiperSlide *ngFor="let item of listBrand">
+      <a (click)="handleCheckBrandId(item.id)" routerLink="/product">
+        <img
+          style="object-fit: contain"
+          width="100"
+          height="90"
+          [src]="imgBrandAPI + item.image"
+          alt=""
+        />
+      </a>
+    </ng-template>
+  </swiper>
+</div>
+
+<div class="mt-5">
+  <div style="transform: rotate(180deg)">
+    <img src="/assets/img/brand/test.svg" alt="" />
+  </div>
+  <div class="separate" style="background: #f5f4f4">
+    <a routerLink="/product"
+      ><h1 class="title mb-3">Top Selling Products</h1></a
+    >
+    <div>
+      <div class="wrap_swiper">
+        <div class="top_branch_slide">
+          <swiper
+            [slidesPerView]="4"
+            [spaceBetween]="40"
+            [navigation]="true"
+            [scrollbar]="{ draggable: true }"
+            [loop]="true"
+            [autoplay]="{ delay: 3000 }"
+            [loopFillGroupWithBlank]="true"
+            class="swiper_custom"
+          >
+            <ng-template swiperSlide *ngFor="let item of listTopSellProduct">
+              <a [routerLink]="'/detail/' + item.id">
+                <div class="card">
+                  <div>
+                    <img
+                      [src]="imgProductAPI + item.main_image"
+                      style="object-fit: contain"
+                      width="270"
+                      height="200"
+                      alt=""
+                    />
+                  </div>
+                  <h5 class="card-title">{{ item.name }}</h5>
+                  <h5 class="card-price">{{ item.price | number : "1.0-3" }}₫</h5>
+                </div>
+              </a>
+            </ng-template>
+          </swiper>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="/assets/img/brand/test.svg" alt="" />
+</div>
+
+<div class="mt-5" style="background: #fff">
+  <div class="separate">
+    <a routerLink="/product"><h1 class="title mb-3">Featured Products</h1></a>
+    <div>
+      <div class="wrap_swiper">
+        <div class="top_branch_slide">
+          <swiper
+            [slidesPerView]="4"
+            [spaceBetween]="40"
+            [navigation]="true"
+            [scrollbar]="{ draggable: true }"
+            [loop]="true"
+            [autoplay]="{ delay: 2000 }"
+            [loopFillGroupWithBlank]="true"
+            class="swiper_custom"
+          >
+          <ng-template swiperSlide *ngFor="let item of listFeatureProduct">
+            <a [routerLink]="'/detail/' + item.id">
+              <div class="card">
+                <div>
+                  <img
+                    [src]="imgProductAPI + item.main_image"
+                    style="object-fit: contain"
+                    width="270"
+                    height="200"
+                    alt=""
+                  />
+                </div>
+                <h5 class="card-title">{{ item.name }}</h5>
+                <h5 class="card-price">{{ item.price | number : "1.0-3" }}₫</h5>
+              </div>
+            </a>
+          </ng-template>
+          </swiper>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-5">
+  <div style="transform: rotate(180deg)">
+    <img src="/assets/img/brand/test.svg" alt="" />
+  </div>
+  <div class="separate" style="background: #f5f4f4">
+    <a routerLink="/product"><h1 class="title mb-3">Today's Best Deals</h1></a>
+    <div>
+      <div class="wrap_swiper">
+        <div class="top_branch_slide">
+          <swiper
+            [slidesPerView]="4"
+            [spaceBetween]="40"
+            [navigation]="true"
+            [scrollbar]="{ draggable: true }"
+            [loop]="true"
+            [autoplay]="{ delay: 2000 }"
+            [loopFillGroupWithBlank]="true"
+            class="swiper_custom"
+          >
+          <ng-template swiperSlide *ngFor="let item of listBestDealProduct">
+            <a [routerLink]="'/detail/' + item.id">
+              <div class="card">
+                <div>
+                  <img
+                    [src]="imgProductAPI + item.main_image"
+                    style="object-fit: contain"
+                    width="270"
+                    height="200"
+                    alt=""
+                  />
+                </div>
+                <h5 class="card-title">{{ item.name }}</h5>
+                <h5 class="card-price">{{ item.price | number : "1.0-3" }}₫</h5>
+              </div>
+            </a>
+          </ng-template>
+          </swiper>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="/assets/img/brand/test.svg" alt="" />
+</div>

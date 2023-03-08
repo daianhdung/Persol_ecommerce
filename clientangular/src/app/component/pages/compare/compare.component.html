@@ -1,0 +1,29 @@
+<div class="bg-light mt-5 container-fluid p-4">
+  <div class="header-detail mb-4">
+    <a routerLink="/home" class="link-header">Home</a>
+    <i class="bi bi-caret-right-fill"></i>
+    <a routerLink="/product">Product</a>
+    <i class="bi bi-caret-right-fill"></i>
+    <span>Compare</span>
+  </div>
+  <div class="row">
+    <div *ngFor="let item of productCompareList" class="col-md-4 col_detail">
+      <img
+        width="400"
+        height="250"
+        [src]="imgProductAPI + item.main_image"
+        alt=""
+      />
+      <div class="mt-3">
+        <p>{{ item.name }}</p>
+        <p>{{ item.price | number : "1.0-3" }}₫</p>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div *ngFor="let item of productCompareList" class="col-md-4 col_detail">
+      <div [innerHTML]="item.detail"></div>
+    </div>
+  </div>
+</div>

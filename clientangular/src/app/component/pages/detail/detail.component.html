@@ -1,0 +1,239 @@
+<div class="bg-light mt-5 p-3 rounded" style="position: relative">
+  <div class="wrapper">
+    <div class="header-detail">
+      <a routerLink="/home" class="link-header">Home</a>
+      <i class="bi bi-caret-right-fill"></i>
+      <a routerLink="/product">Brands</a>
+      <i class="bi bi-caret-right-fill"></i>
+      <span>Product</span>
+      <span (click)="addItemCompare()" class="compare_icon"
+        ><i class="bi bi-plus-circle"></i> Compare</span
+      >
+    </div>
+    <div class="mid-detail">
+      <div>
+        <div class="left-detail p-4" style="background-color: rgb(125, 201, 201)">
+          <!-- <ShoesThumb children={detailProduct.images} /> -->
+          <swiper
+            [slidesPerView]="1"
+            [navigation]="true"
+            [scrollbar]="{ draggable: true }"
+            [loopFillGroupWithBlank]="true"
+            class="swiper_custom"
+            *ngIf="product.image_product?.length > 0; else noImage"
+          >
+            <ng-template swiperSlide *ngFor="let item of product.image_product">
+              <img
+                style="object-fit: contain"
+                width="100%"
+                height="400"
+                [src]="imgImageProductAPI + item.name"
+                alt=""
+              />
+            </ng-template>
+          </swiper>
+          <ng-template #noImage>
+            <img
+                style="object-fit: contain"
+                width="100%"
+                height="400"
+                [src]="imgProductAPI + product.main_image"
+                alt=""
+              />
+          </ng-template>
+        </div>
+      </div>
+      <div class="right-detail">
+        <div class="description">
+          <h1 class="fw-bold">{{ product.name }}</h1>
+          <!-- <div class="span-yellow">Số lượng: 1</div>
+          <div class="span-yellow">Hết hàng</div> -->
+          <div class="description_detail">
+            <h3 class="my-4">
+              Brand: <span>{{ product.brand?.name }}</span>
+            </h3>
+
+            <h3 class="price my-4">
+              Price: <span>{{ product.price | number : "1.0-3" }} VND</span>
+            </h3>
+            <h3 class="my-4">
+              Category: <span>{{ product.category?.name }}</span>
+            </h3>
+            <!-- <h3 class="my-4">Tags: <span>Food Pet, Puppy</span></h3> -->
+          </div>
+          <div [innerHTML]="product.detail" class="detail_description fs-4">
+            
+          </div>
+        </div>
+        <!-- <div class="product_size">
+          <label> Size </label>
+          <div>
+            <span style="display: inline-block" class="form-check">
+              <input type="radio" name="form-check-input" />
+              <label class="form-check-label" htmlFor="{item.id}"> name </label>
+            </span>
+          </div>
+        </div> -->
+        <!-- {amount && amount > 0 ? <div class='product_action')}>
+                  <div class='quantity_setup')}>
+                      <label>
+                          Số lượng
+                      </label>
+                      <button onClick={onReduce} class='btn-reduce', 'btn')} type="button">
+                          -
+                      </button>
+                      <input value={count} type="text" title="Số lượng" maxLength="3" id="qty" name="quantity" onInput={handleInput} onChange={handleChange} />
+                      <button onClick={onIncrease} class='btn-increase', 'btn')} type="button">+</button>
+                  </div>
+                  <div class='button_action')}>
+                      <button onClick={onSubmit} class='grow_spin')} type="submit" title="Mua Ngay">
+                          <span><FontAwesomeIcon icon={faShoppingBag} /> MUA NGAY</span>
+                      </button>
+                  </div>
+              </div> : <h1 class="text-danger fw-bold">Vui lòng chọn size</h1>} -->
+        <div class="button_action">
+          <button
+            class="grow_spin"
+            (click)="downloadWordProduct(product.id, product.name)"
+          >
+            Download Detail
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- {modalOpen && <CartModal closeModal={() => setModalOpen(false)} />} -->
+  </div>
+
+  <div class="row mb-5">
+    <ul class="nav nav-pills col-md-6 offset-md-5" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a
+          class="btn btn-outline-info rounded-pill ms-3 active"
+          href="#content1"
+          data-bs-toggle="pill"
+          role="tab"
+          aria-controls="content1"
+          aria-selected="true"
+          >Description</a
+        >
+      </li>
+      <li class="nav-item" role="presentation">
+        <a
+          class="btn btn-outline-info rounded-pill ms-3"
+          href="#content2"
+          data-bs-toggle="pill"
+          role="tab"
+          aria-controls="content2"
+          aria-selected="false"
+          >Comment</a
+        >
+      </li>
+      <li class="nav-item" role="presentation">
+        <a
+          class="btn btn-outline-info rounded-pill ms-3"
+          href="#content3"
+          data-bs-toggle="pill"
+          role="tab"
+          aria-controls="content3"
+          aria-selected="false"
+          >Rating</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="tab-content">
+    <div
+      id="content1"
+      class="tab-pane fade show active"
+      role="tabpanel"
+      aria-labelledby="content1-tab"
+      *ngIf="product.category_id != 3; else lense"
+    >
+      <p>
+        <strong
+          >Để có một thị lực tối ưu, thời gian đeo kính được lâu và kéo dài tuổi
+          thọ của chiếc kính, bạn cần tuân thủ những thao tác cần thiết cũng như
+          việc vệ sinh kính để tránh được tối đa những trục trặc không đáng có
+          khi sử dụng kính:</strong
+        >
+      </p>
+      <p>
+        <strong>-Nên đeo kính và tháo kính bằng cả hai tay.</strong>Vì thói quen
+        chỉ sử dụng một tay lâu ngày dễ làm kính bị méo, lệch hai gọng, giữa
+        gọng và mắt kính không còn chuẩn, gọng kính cũng dễ lung lay.
+      </p>
+      <p>
+        <strong
+          >– Thường xuyên vệ sinh mắt kính bằng nước sạch hoặc nước rửa kính
+          chuyên dụng,</strong
+        >&nbsp;đặc biệt là ở các khe kẽ nơi sống mũi, chỗ gập ở gọng, đường viền
+        mắt kính…, không rửa kính bằng nước nóng, không đeo kính khi đi tắm hơi,
+        không dùng máy sấy, lò sấy để làm khô kính.
+      </p>
+      <p>
+        <strong
+          >– Không nên để kính những nơi nhiệt độ cao hoặc có ánh sáng mặt trời
+          trực tiếp</strong
+        >&nbsp;như: bếp ga, lò sưởi, bàn ủi nóng, cốp xe máy, táp lô xe ô tô… vì
+        sẽ dễ làm chảy các lớp phủ chống tia UV, tia hồng ngoại … trên tròng
+        kính.
+      </p>
+      <p>
+        <strong>– Không chạm tay vào mắt kính</strong>&nbsp;để tránh việc bạn
+        nhìn mờ, tròng kính bị bám dầu từ ngón tay hoặc gây cảm giác không thoải
+        mái khi đeo kính.
+      </p>
+      <p>
+        <strong>– Không đeo kính khi chơi các môn thể thao đối kháng</strong
+        >&nbsp;như bóng đá, bóng chuyền, cầu lông… vì nếu trường hợp bị ngã kính
+        không những gãy hỏng mà còn gây nguy hiểm cho bạn.
+      </p>
+      <p>
+        <strong>– Khi không dùng kính, cần cất trong hộp cứng</strong>&nbsp;hoặc
+        túi vải mềm và để ở chỗ hợp lý.
+      </p>
+      <p><strong>– Không tự ý sửa chữa kính.</strong></p>
+    </div>
+    <ng-template #lense>
+      <div
+      id="content1"
+      class="tab-pane fade show active"
+      role="tabpanel"
+      aria-labelledby="content1-tab"  
+      >
+        <p><strong>Tính Năng Nổi Bật :</strong></p>
+        <p>– Ánh sáng xanh được phát ra từ ánh sáng mặt trời, màn hình các thiết bị điện tử hằng ngày rất lớn, nếu không bảo vệ mắt tốt, sau thời gian dài tiếp xúc sẽ gây tổn thương giác mạc và tăng mức độ bệnh lý về mắt. Do đó, việc chuẩn bị cho mình một chiếc tròng kính có khả năng chống&nbsp; lại ánh sáng xanh có hại là điều rất cần thiết.<br>
+        – Chỉ số Power USH: được biết đến với ý nghĩa sản phẩm được ứng dụng tính năng lớp phủ thông minh giúp ngăn ngừa phần ánh sáng xanh có hại khi sử dụng các thiết bị điện tử thời gian dài.</p>
+        <p>– Chỉ số Perfect UV: Giúp chống ánh sáng xanh tím có hại khi xem điện thoại, máy tính, tiếp xúc với đèn led…<br>
+        – Chemi U6 loại bỏ hoàn toàn tia UV tiếp xúc vào tròng kính và truyền 96% ánh sáng có lợi cho mắt, ngăn cản ánh sáng xanh có hại, giảm sự quang sai màu sắc tạo ra tầm nhìn rõ ràng, hạn chế mỏi mắt, giúp phòng ngừa đục thủy tinh thể và tổn thương giác mạc.</p>
+        <p>&nbsp;</p>
+        <p>– Tròng kính Chemi 1.60 U6 được ưa chuộng nhất hiện nay bởi tính năng đa dạng và giá cả phù hợp.</p>
+        <p>&nbsp;</p>
+        <p>Ngoài ra, chất liệu nhựa Medium Index Plastic tăng độ bền của kính, lớp phủ trên bề mặt tròng kính Chemi U6 1.60 giúp hạn chế bám bụi, loang nước và bám vân, chống chói lóa khi đi ngoài trời.</p>
+        <p>– Đối tượng khuyên dùng: người thường xuyên tham gia các hoạt động ngoài trời, sử dụng thiết bị điện tử như máy vi tính, smartphone… thường xuyên làm việc dưới ánh sáng mạnh.</p>
+        <p>&nbsp;</p>
+      </div>
+    </ng-template>
+    <div
+      id="content2"
+      class="tab-pane fade"
+      role="tabpanel"
+      aria-labelledby="content2-tab"
+    >
+      Comment
+    </div>
+    <div
+      id="content3"
+      class="tab-pane fade"
+      role="tabpanel"
+      aria-labelledby="content3-tab"
+    >
+      Rating
+    </div>
+  </div>
+
+  <app-compare-bar [toggleCompare]="toggleCompare" (isToggleChange)="onToggleChange($event)"></app-compare-bar>
+</div>
+
+
+

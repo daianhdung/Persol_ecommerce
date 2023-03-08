@@ -1,0 +1,109 @@
+<!-- INSERT USER------------------ -->
+<form [formGroup]="formData">
+  <div class="form-update row p-5">
+    <div class="row justify-content-center mb-3">
+      <div class="col-md-4 fw-bold">
+        <label>Thêm mới thương hiệu </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-5">
+        <label htmlFor="name">Tên thượng hiệu</label>
+        <input
+          style="height: '40px'"
+          type="text"
+          class="form-control form-control-lg"
+          id="name"
+          placeholder=""
+          formControlName="name"
+        />
+        <ng-container
+          *ngIf="
+            (formData.get('name')?.invalid && isSubmitted) ||
+            formData.get('name')?.dirty ||
+            formData.get('name')?.touched
+          "
+        >
+          <span
+            class="text-danger"
+            *ngIf="formData.get('name')?.errors?.['required']"
+          >
+            Tên thượng hiệu không được trống.
+          </span>
+        </ng-container>
+      </div>
+      <div class="form-group col-md-5">
+        <div class="first_wrapper">
+          <div class="filter_div">Category</div>
+          <div class="d-flex align-content-start flex-wrap">
+            <div *ngFor="let item of listCategory">
+              <input
+                type="checkbox"
+                [id]="item.id + 'category'"
+                [checked]="listCheckCategoryIds.includes(item.id)"
+                (change)="handleCheckCategoryId(item.id)"
+                class="btn-check"
+              />
+              <label
+                class="btn btn-outline-dark btn-sm my-1 mx-1"
+                [htmlFor]="item.id + 'category'"
+                >{{ item.name }}</label
+              >
+            </div>
+          </div>
+        </div>
+        <ng-container>
+          <span
+            class="text-danger"
+            *ngIf="listCheckCategoryIds.length <= 0 && isSubmitted"
+          >
+            Thương hiệu không được trống.
+          </span>
+        </ng-container>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="form-group col-md-5">
+        <label htmlFor="main-image">Ảnh Chính </label>
+        <!-- {msg.mainImage && <span class="text-danger">{msg.mainImage}</span>} -->
+        <div class="product-main-image-wrapper">
+          <!-- <img src={URL.createObjectURL(mainImage)}/> :<img src={product.mainImage}/> -->
+        </div>
+        <input
+          type="file"
+          class="form-control-file"
+          id="main-image"
+          (change)="onSingleSelected($event)"
+        />
+        <ng-container
+          *ngIf="
+            (formData.get('image')?.invalid && isSubmitted) ||
+            formData.get('image')?.dirty ||
+            formData.get('image')?.touched
+          "
+        >
+          <div
+            class="text-danger"
+            *ngIf="formData.get('image')?.errors?.['required']"
+          >
+            Ảnh không được trống.
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="mt-5">
+      <button
+        (click)="onSubmit()"
+        style="width: '100px'"
+        class="me-4 btn btn-outline-info mb-2 p-3"
+      >
+        Xác nhận
+      </button>
+      <a routerLink="/admin-brand-list">
+        <button style="width: '100px'" class="btn btn-outline-danger mb-2 p-3">
+          Quay lại
+        </button>
+      </a>
+    </div>
+  </div>
+</form>
